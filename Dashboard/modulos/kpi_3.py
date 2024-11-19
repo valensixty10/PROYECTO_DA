@@ -14,7 +14,7 @@ def display():
     """)
 
     # Cargar el archivo Parquet
-    accesos_internet = pd.read_parquet('notebooks\data\processed\internet_accesos_tecnologia.parquet')
+    accesos_internet = pd.read_parquet('Dashboard\internet_accesos_tecnologia.parquet')
 
     # Calcular el índice de modernización en porcentaje
     accesos_internet['Índice de Modernización (%)'] = (
