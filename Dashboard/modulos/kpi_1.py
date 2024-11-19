@@ -18,7 +18,7 @@ def display():
     """)
 
     # Cargar el archivo Parquet de accesos a internet procesado
-    accesos_internet = pd.read_parquet('Dashboard\internet_accesos_tecnologia.parquet')
+    accesos_internet = pd.read_parquet('Dashboard/internet_accesos_tecnologia.parquet')
 
     # Agrupar por provincia y trimestre para obtener la suma de accesos por trimestre en cada provincia
     accesos_provincia = accesos_internet.groupby(['Provincia', 'Año', 'Trimestre'])['Total'].sum().reset_index()

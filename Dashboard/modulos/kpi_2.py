@@ -13,8 +13,8 @@ def display():
     """)
 
     # Cargar los datos desde archivos Parquet
-    accesos_internet = pd.read_parquet('Dashboard\internet_accesos_tecnologia.parquet')
-    mapa_conectividad = pd.read_parquet('Dashboard\mapa_conectividad.parquet')
+    accesos_internet = pd.read_parquet('Dashboard/internet_accesos_tecnologia.parquet')
+    mapa_conectividad = pd.read_parquet('Dashboard/mapa_conectividad.parquet')
 
 
     # Preparar el DataFrame de cobertura de fibra óptica
