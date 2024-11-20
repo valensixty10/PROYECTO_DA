@@ -94,10 +94,19 @@ def display():
     )
     st.plotly_chart(fig2, use_container_width=True)
 
-    # Conclusiones
+    # Evaluación del KPI
+    st.subheader("📈 Evaluación del KPI")
+    meta_kpi = 10  # Meta del KPI: Índice de modernización del 10%
+    promedio_modernizacion = indice_modernizacion_provincia['Índice de Modernización (%)'].mean()
+
+    if promedio_modernizacion >= meta_kpi:
+        st.success(f"✅ El KPI se cumple. Índice promedio de modernización: {promedio_modernizacion:.2f}%, superando la meta del {meta_kpi}%.")
+    else:
+        st.error(f"❌ El KPI no se cumple. Índice promedio de modernización: {promedio_modernizacion:.2f}%, por debajo de la meta del {meta_kpi}%.")
+
+    # Explicación adicional
     st.markdown("""
-    ### Conclusiones
-    - Las provincias con mayor índice de modernización coinciden con aquellas que tienen un porcentaje significativo de acceso mediante **fibra óptica**.
-    - Existen disparidades importantes entre provincias en cuanto al nivel de adopción de tecnologías avanzadas.
-    - Este análisis puede servir como base para diseñar políticas públicas que promuevan la modernización de la infraestructura en las provincias con menor índice.
+    ### Explicación
+    Este KPI evalúa la adopción de tecnologías avanzadas en cada provincia. A pesar de que algunas provincias superan con creces el objetivo del 10%, el promedio nacional puede verse afectado por aquellas con índices bajos.
+    Si el KPI no se cumple, se deben priorizar inversiones en regiones con menor adopción de fibra óptica para lograr una modernización más uniforme.
     """)

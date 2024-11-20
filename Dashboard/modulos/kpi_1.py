@@ -121,3 +121,21 @@ def display():
         )
     )
     st.plotly_chart(fig2, use_container_width=True)
+
+    # Evaluación del KPI
+    st.subheader("📈 Evaluación del KPI")
+    total_actual = accesos_ultimo_trimestre['Total'].sum()
+    total_proyectado = accesos_ultimo_trimestre['Nuevo Acceso'].sum()
+    
+    if total_actual < total_proyectado:
+        st.success(f"✅ El KPI se logró alcanzar con una proyección de {total_proyectado:.2f} accesos.")
+    else:
+        st.error(f"❌ El KPI no se logró. Accesos actuales: {total_actual:.2f}, Proyectados: {total_proyectado:.2f}.")
+
+    # Explicación adicional
+    st.markdown("""
+    ### Explicación
+    El análisis del KPI 1 nos permite identificar si el objetivo del incremento del 2% en el acceso a internet fue alcanzado. 
+    Este objetivo es crucial para evaluar la expansión de la conectividad digital en las provincias. En caso de no lograrse, 
+    se recomienda analizar las áreas con menor crecimiento e implementar estrategias específicas para reducir la brecha de acceso.
+    """)
